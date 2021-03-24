@@ -1,0 +1,50 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<form >
+<p style="text-align:center;text-decoration:underline">Details Form</p>
+
+<table>
+
+<tr>
+<td>Name:</td>
+<td><input type="text" min="3" id="name" required></td>
+</tr>
+<tr>
+<td>Mob. No.</td>
+<td><input type="number" min="10" id="num" required></td>
+</tr>
+<tr>
+<td>Email ID:</td>
+<td><input type="email" id="em" required></td>
+</tr>
+<tr>
+<td></td>
+<td><button onclick="append()">Submit</button></td>
+</tr>
+</table>
+<br>
+<hr>
+<p><span id="dis"></span></p>
+</form>
+<script>
+function append()
+{
+<table id="displ">
+<tr>
+<td>document.getElementById("dis").innerHTML=document.getElementById("name").value;</td>
+<td>document.getElementById("dis").innerHTML=document.getElementById("num").value;</td>
+<td>document.getElementById("dis").innerHTML=document.getElementById("em").value;</td>
+<td><input type="submit" value="Delete" onclick="deleteRow(this)"></td>
+</tr>
+</table>
+}
+function deleteRow(r) {
+  var i = r.parentNode.parentNode.rowIndex;
+  document.getElementById("displ").deleteRow(i);
+}
+</script>
+</body>
+</html>
